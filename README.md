@@ -4,5 +4,5 @@ TwitchPointでNoita内にアクションを起こすためのMODです。
 
 ## LICENSE
 
-- [LICENSE](LICENSE.md)
+- [LICENSE](LICENSE)
 - [Noita MOD Rule](docs/NOITA_MOD_RULES.md)
