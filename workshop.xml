@@ -1,0 +1,7 @@
+<Mod
+	name="twitch-point-integration"
+  tags=""
+  dont_upload_folders="resources"
+  dont_upload_files=".editorconfig"
+>
+</Mod>
