@@ -3,7 +3,7 @@
 	url = git@github.com:zatherz/luanxml.git
 [submodule "files/scripts/lib/jsonlua"]
 	path = files/scripts/lib/jsonlua
-	url = git@github.com:rxi/jsonlua.git
+	url = git@github.com:rxi/json.lua.git
 [submodule "files/scripts/lib/coil"]
 	path = files/scripts/lib/coil
 	url = git@github.com:rxi/coil.git
