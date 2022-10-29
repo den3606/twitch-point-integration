@@ -1,7 +1,6 @@
 # twitch-point-integration
 
-noita-nemesisの対戦時に利用するMOD。
-ELOレーティングがつくようになります。
+TwitchPointでNoita内にアクションを起こすためのMODです。
 
 ## LICENSE
 
