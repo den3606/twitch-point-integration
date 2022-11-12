@@ -3,7 +3,7 @@ local EventHelper = dofile_once("mods/twitch-point-integration/files/scripts/eve
 local function Balloon(data, event)
   local player_entity_id = GetPlayerEntity()
 
-  if (player_entity_id == nil) then
+  if player_entity_id == nil then
     return false
   end
 

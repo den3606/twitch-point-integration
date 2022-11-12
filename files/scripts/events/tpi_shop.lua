@@ -46,10 +46,10 @@ local function TPIShop(data, event)
 
   local player_entity_id = GetPlayerEntity()
 
-  if (player_entity_id == nil) then
+  if player_entity_id == nil then
     return false
   end
-  
+
   local x, y = EntityGetTransform(player_entity_id)
   EntityLoad("mods/twitch-point-integration/files/entities/buildings/tpi_shop.xml", x + 90, y + 6)
 

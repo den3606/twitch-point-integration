@@ -1,6 +1,6 @@
 local function FungalShift(data, events)
   local player_entity_id = GetPlayerEntity()
-  if (player_entity_id == nil) then
+  if player_entity_id == nil then
     return false
   end
 
