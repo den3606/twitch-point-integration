@@ -5,6 +5,17 @@
   <LifetimeComponent lifetime="600">
   </LifetimeComponent>
 
+  <LuaComponent script_source_file="mods/twitch-point-integration/files/scripts/status_effects/stretch_start.lua"
+    execute_on_added="1"
+    execute_every_n_frame="1">
+  </LuaComponent>
+
+  <LuaComponent script_source_file="mods/twitch-point-integration/files/scripts/status_effects/stretch_end_observer.lua"
+    execute_on_removed="1"
+    execute_every_n_frame="-1"
+    remove_after_executed="1">
+  </LuaComponent>
+
   <UIIconComponent name="$tpi_stretch"
     description="$tpi_stretch_description"
     icon_sprite_file="mods/twitch-point-integration/files/ui_gfx/status_indicators/stretch.png"
