@@ -1,10 +1,10 @@
 local function SpawnSteve(data)
-  local player_entity = GetPlayerEntity()
-  if (player_entity == nil) then
+  local player_entity_id = GetPlayerEntity()
+  if (player_entity_id == nil) then
     return
   end
 
-  local x, y = EntityGetTransform(player_entity)
+  local x, y = EntityGetTransform(player_entity_id)
   x = x + (Random(1, 2) == 1 and Random(-40, -30) or Random(30, 40))
   y = y - Random(-30, 30)
 

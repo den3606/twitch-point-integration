@@ -61,7 +61,7 @@ end
 local function noita_event_debug()
   Coil.add(function()
     while true do
-      Coil.wait(180)
+      Coil.wait(60)
       -- NoitaEvent.Call("Berserk", {})
       -- NoitaEvent.Call("Blindness", {})
       -- NoitaEvent.Call("Bomberman", {})
@@ -73,7 +73,7 @@ local function noita_event_debug()
       -- NoitaEvent.Call("MovementControll", {}) -- Note: unimplemented
       -- NoitaEvent.Call("Neutralized", {})
       -- NoitaEvent.Call("PotionGift", {})
-      -- NoitaEvent.Call("RandomAll", {})
+      NoitaEvent.Call("RandomAll", {})
       -- NoitaEvent.Call("RandomSpellx10", {})
       -- NoitaEvent.Call("RandomSpell", {})
       -- NoitaEvent.Call("RussianRoolet", { used_by = 'noita' })

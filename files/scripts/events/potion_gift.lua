@@ -1,9 +1,10 @@
 local function PotionGift(data, event)
-  local player_entity = GetPlayerEntity()
-  if (player_entity == nil) then
+  local player_entity_id = GetPlayerEntity()
+  if (player_entity_id == nil) then
     return
   end
-  local x, y = EntityGetTransform(player_entity)
+
+  local x, y = EntityGetTransform(player_entity_id)
   SetRandomSeed(x, y)
   if Random(0, 100) < 5 then
     EntityLoad("data/entities/items/pickup/potion.xml", x + Random(-30, 30), y + Random(-30, 30))

@@ -4,8 +4,18 @@ local function RandomAll(data, events)
     list[event.name] = event.weight
   end)
   local target_name = Lume.weightedchoice(list)
-  -- TODO:pcall で call する
-  events[target_name].action(data, events)
+
+  local successed, event_called = pcall(events[target_name].action, data, events)
+  if successed then
+    if event_called then
+      print("NoitaRandomAllEvent[" .. events[target_name].name .. "]: executed")
+    else
+      print("NoitaRandomAllEvent[" .. events[target_name].name .. "]: can't executed")
+    end
+  else
+    print("NoitaRandomAllEvent[" .. events[target_name].name .. "]: failed")
+  end
+
   return true
 end
 
