@@ -10,7 +10,7 @@ local events = {
   Balloon = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/balloon.lua"),
     name = "Balloon",
-    twitchCost = 400,
+    twitchCost = 350,
     weight = 60,
   },
   Berserk = {
@@ -64,7 +64,7 @@ local events = {
   MovementControl = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_control.lua"),
     name = "MovementControl",
-    twitchCost = 200,
+    twitchCost = 300,
     weight = 150,
   },
   Neutralized = {
@@ -106,7 +106,7 @@ local events = {
   SpawnRandomEnemy = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_random_enemy.lua"),
     name = "SpawnRandomEnemy",
-    twitchCost = 500,
+    twitchCost = 350,
     weight = 60,
   },
   -- secret
