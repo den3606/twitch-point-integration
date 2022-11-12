@@ -1,7 +1,5 @@
 dofile_once("mods/twitch-point-integration/files/scripts/lib/utilities.lua")
 
-print("stretch_obs")
-
 local player_entity_id = GetPlayerEntity()
 if (player_entity_id == nil) then
   return
