@@ -5,7 +5,7 @@ local function SpawnRandomEnemy(data)
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  x = x + (Random(1, 2) == 1 and Random(-40, -30) or Random(30, 40))
+  x = x + (Random(1, 2) == 1 and Random(-60, -30) or Random(30, 60))
   y = y - Random(-30, 30)
 
 
