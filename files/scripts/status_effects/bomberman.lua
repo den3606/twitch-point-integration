@@ -2,6 +2,10 @@ dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("mods/twitch-point-integration/files/scripts/lib/utilities.lua")
 
 local player_entity_id = GetPlayerEntity()
+if (player_entity_id == nil) then
+  return
+end
+
 local x, y = EntityGetTransform(player_entity_id)
 local entity_id = EntityLoad( "mods/twitch-point-integration/files/entities/bomberman.xml", x, y )
 
