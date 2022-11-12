@@ -59,39 +59,41 @@ local function game_start()
 end
 
 local function noita_event_debug()
-  Coil.add(function()
-    while true do
-      Coil.wait(60)
-      -- Lume.push(NOITA_TASKS, {event_name = "Berserk", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "Blindness", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "Bomberman", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "FungalShift", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "Healing", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "HeavySpread", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "HelloDeer", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "Hello", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "MovementControll", event_data = { used_by = 'noita', message = 'testMessage' }}) -- Note: unimplemented
-      -- Lume.push(NOITA_TASKS, {event_name = "Neutralized", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "PotionGift", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "RandomAll", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "RandomSpellx10", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "RandomSpell", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "RussianRoolet", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "SpawnRandomEnemy", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "SpawnSkoude", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
-      -- Lume.push(NOITA_TASKS, {event_name = "SpawnSteve", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
-      -- Lume.push(NOITA_TASKS, {event_name = "SpawnWater", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "Stretch", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "SuperRecoil", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "SuperRussianRoolet", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "TPIShop", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "TrailAcid", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "TrailLava", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "TrailPoison", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "TrailWater", event_data = { used_by = 'noita', message = 'testMessage' }})
-      -- Lume.push(NOITA_TASKS, {event_name = "Twitchy", event_data = { used_by = 'noita', message = 'testMessage' }})
-    end
-  end)
+  local function add_events()
+    -- Lume.push(NOITA_TASKS, {event_name = "AntiGravity", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Balloon", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Berserk", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Blindness", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Bomberman", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "FungalShift", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Healing", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "HeavySpread", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "HelloDeer", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Hello", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "MovementControll", event_data = { used_by = 'noita', message = 'testMessage' }}) -- Note: unimplemented
+    -- Lume.push(NOITA_TASKS, {event_name = "Neutralized", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "PotionGift", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "RandomAll", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "RandomSpellx10", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "RandomSpell", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "RussianRoolet", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "SpawnRandomEnemy", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "SpawnSkoude", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
+    -- Lume.push(NOITA_TASKS, {event_name = "SpawnSteve", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
+    -- Lume.push(NOITA_TASKS, {event_name = "SpawnWater", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Stretch", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "SuperRecoil", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "SuperRussianRoolet", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "TPIShop", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "TrailAcid", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "TrailLava", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "TrailPoison", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "TrailWater", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "Twitchy", event_data = { used_by = 'noita', message = 'testMessage' }})
+  end
+
+  -- add_events()   -- once
+  -- Coil.add(function() while true do Coil.wait(60) add_events() end end)   -- Loop
 end
 
 function OnPlayerSpawned(player_entity_id)

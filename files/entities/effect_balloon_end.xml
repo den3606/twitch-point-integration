@@ -1,0 +1,11 @@
+<Entity>
+
+  <InheritTransformComponent _enabled="1">
+  </InheritTransformComponent>
+
+  <LuaComponent script_source_file="mods/twitch-point-integration/files/scripts/status_effects/balloon_end.lua"
+    execute_on_added="1"
+    execute_every_n_frame="-1">
+  </LuaComponent>
+
+</Entity>

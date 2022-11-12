@@ -1,6 +1,18 @@
 dofile_once("mods/twitch-point-integration/files/scripts/lib/utilities.lua")
 
 local events = {
+  AntiGravity = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/anti_gravity.lua"),
+    name = "AntiGravity",
+    twitchCost = 200,
+    weight = 80,
+  },
+  Balloon = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/balloon.lua"),
+    name = "Balloon",
+    twitchCost = 400,
+    weight = 60,
+  },
   Berserk = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/berserk.lua"),
     name = "Berserk",
@@ -49,12 +61,12 @@ local events = {
     twitchCost = 10,
     weight = 0,
   },
-  -- MovementControll = {
-  --   action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_controll.lua"),
-  --   name = "MovementControll",
-  --   twitchCost = 200,
-  --   weight = 150,
-  -- },
+  MovementControll = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_controll.lua"),
+    name = "MovementControll",
+    twitchCost = 200,
+    weight = 150,
+  },
   Neutralized = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/neutralized.lua"),
     name = "Neutralized",

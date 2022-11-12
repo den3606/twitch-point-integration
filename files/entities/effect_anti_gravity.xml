@@ -1,0 +1,25 @@
+<Entity>
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+    <ShotEffectComponent
+        extra_modifier="anti_gravity"
+		>
+	</ShotEffectComponent>
+
+	<LifetimeComponent
+		lifetime="600"
+		>
+	</LifetimeComponent>
+
+	<UIIconComponent
+		name = "$streamingevent_antigravity"
+		description = "$streamingeventdesc_antigravity"
+		icon_sprite_file="data/ui_gfx/status_indicators/antigravity.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+</Entity>
