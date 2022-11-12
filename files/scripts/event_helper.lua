@@ -53,8 +53,46 @@ local function ShootProjectile(who_shot, entity_file, x, y, vel_x, vel_y, send_m
   return entity_id
 end
 
+local function CreateDisplayNameEntity(name)
+  local text = {
+    string = name,
+    offset_y = "-6",
+    scale_x = "0.7",
+    scale_y = "0.7",
+  }
+  local name_entity_id = EntityCreateNew("tpi_name")
+  EntityAddComponent(name_entity_id, "InheritTransformComponent", {
+    _tags = "enabled_in_world",
+    use_root_parent = "1",
+  })
+
+  if EntityGetIsAlive(name_entity_id) == false then
+    return nil
+  end
+  text.offset_x = string.len(text.string) * 1.9
+  EntityAddComponent(name_entity_id, "SpriteComponent", {
+    _tags = "enabled_in_world",
+    image_file = text.font or "data/fonts/font_pixel_white.xml",
+    emissive = "1",
+    is_text_sprite = "1",
+    offset_x = text.offset_x or "0",
+    offset_y = text.offset_y or "0",
+    alpha = text.alpha or "1",
+    update_transform = "1",
+    update_transform_rotation = "0",
+    text = text.string or "",
+    has_special_scale = "1",
+    special_scale_x = text.scale_x or "1",
+    special_scale_y = text.scale_y or "1",
+    z_index = "-9000",
+  })
+
+  return name_entity_id
+end
+
 return {
   SetLifetime = SetLifetime,
   AddIconInHud = AddIconInHud,
+  CreateDisplayNameEntity = CreateDisplayNameEntity,
   ShootProjectile = ShootProjectile,
 }
