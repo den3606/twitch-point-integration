@@ -159,7 +159,12 @@ local events = {
     twitchCost = 300,
     weight = 60,
   },
-
+  TrailWater = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/trail_water.lua"),
+    name = "TrailWater",
+    twitchCost = 200,
+    weight = 80,
+  },
   -- MovementControll = {
   --   action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_controll.lua"),
   --   name = "MovementControll",
