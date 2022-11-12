@@ -12,7 +12,7 @@ local character_platforming_component = EntityGetComponent(player_entity_id, "Ch
 
 if (character_platforming_component ~= nil) then
   for _, component_id in ipairs(character_platforming_component) do
-    ComponentSetValue(component_id, "pixel_gravity", "600")
+    ComponentSetValue(component_id, "pixel_gravity", "350")
   end
 end
 
