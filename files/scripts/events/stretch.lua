@@ -1,8 +1,8 @@
 local function Stretch(data, event)
   local EventHelper = dofile_once("mods/twitch-point-integration/files/scripts/event_helper.lua")
   local player_entity_id = GetPlayerEntity()
-  if (player_entity_id == nil) then
-    return
+  if player_entity_id == nil then
+    return false
   end
 
   local x, y = EntityGetTransform(player_entity_id)

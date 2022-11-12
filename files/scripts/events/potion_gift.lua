@@ -1,7 +1,7 @@
 local function PotionGift(data, event)
   local player_entity_id = GetPlayerEntity()
-  if (player_entity_id == nil) then
-    return
+  if player_entity_id == nil then
+    return false
   end
 
   local x, y = EntityGetTransform(player_entity_id)
