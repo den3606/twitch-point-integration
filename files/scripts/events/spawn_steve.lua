@@ -12,7 +12,7 @@ local function SpawnSteve(data)
 
   GamePrintImportant(GameTextGet("$tpi_secret_steve_spawn", data.used_by))
 	local steve_entity_id = EntityLoad("data/entities/animals/necromancer_shop.xml", x, y)
-
+  EntityRemoveTag(steve_entity_id, "necromancer_shop")
   EntityAddChild(steve_entity_id, EventHelper.CreateDisplayNameEntity(data.used_by))
   EntityAddTag(steve_entity_id, "dont_append_name")
 
