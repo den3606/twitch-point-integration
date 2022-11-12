@@ -39,7 +39,7 @@ local events = {
   },
   Healing = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/healing.lua"),
-    name = "Headling",
+    name = "Healing",
     twitchCost = 200,
     weight = 20,
   },
