@@ -61,9 +61,9 @@ local events = {
     twitchCost = 10,
     weight = 0,
   },
-  MovementControll = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_controll.lua"),
-    name = "MovementControll",
+  MovementControl = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_control.lua"),
+    name = "MovementControl",
     twitchCost = 200,
     weight = 150,
   },
