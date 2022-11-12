@@ -1,8 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("mods/twitch-point-integration/files/scripts/lib/utilities.lua")
 
-p("b s")
-
 local player_entity_id = GetPlayerEntity()
 if (player_entity_id == nil) then
   return
