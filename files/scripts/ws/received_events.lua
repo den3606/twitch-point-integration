@@ -38,6 +38,12 @@ local events = {
 
 local function call(event_name, data)
   print("Event[" .. event_name .. "]: called")
+
+  if events[event_name] == nil then
+    print("Event[" .. event_name .. "]: undefined")
+    return
+  end
+
   local successed, event_called = pcall(events[event_name], data)
   if successed then
     if event_called then

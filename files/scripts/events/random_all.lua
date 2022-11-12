@@ -5,6 +5,11 @@ local function RandomAll(data, events)
   end)
   local target_name = Lume.weightedchoice(list)
 
+  if events[target_name] == nil then
+    print("NoitaRandomAllEvent[" .. target_name .. "]: undefined")
+    return true
+  end
+
   local successed, event_called = pcall(events[target_name].action, data, events)
   if successed then
     if event_called then

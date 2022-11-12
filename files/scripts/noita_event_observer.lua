@@ -175,6 +175,12 @@ local events = {
 
 local function Call(event_name, event_data)
   print("NoitaEvent[" .. event_name .. "]: called")
+
+  if events[event_name] == nil then
+    print("NoitaEvent[" .. event_name .. "]: undefined")
+    return
+  end
+
   local successed, event_called = pcall(events[event_name].action, event_data, events)
   if successed then
     if event_called then
