@@ -4,7 +4,7 @@ local function RandomAll(data, events)
     list[event.name] = event.weight
   end)
   local target_name = Lume.weightedchoice(list)
-  events[target_name].action(data)
+  events[target_name].action(data, events)
   return true
 end
 

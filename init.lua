@@ -49,17 +49,61 @@ local function noita_event_fire()
   end
 end
 
+local function game_start()
+  local controls_component = EntityGetFirstComponent(GetPlayerEntity(), "ControlsComponent")
+  if (controls_component ~= nil) then
+    ComponentSetValue2(controls_component, "enabled", true)
+    GamePrintImportant(GameTextGetTranslatedOrNot("$tpi_game_start"),"","data/ui_gfx/decorations/tab_selected.png")
+    GlobalsSetValue(TWITCH_POINT.GLOBAL_KEYNAMES.CURRENT_STEP, TWITCH_POINT.STEPS.STARTED)
+  end
+end
+
+local function noita_event_debug()
+  NoitaEvent.Call("TPIShop", {})
+  Coil.add(function()
+    while true do
+      Coil.wait(180)
+      -- NoitaEvent.Call("SpawnRandomEnemy", {})
+      -- NoitaEvent.Call("TPIShop", {})
+      -- NoitaEvent.Call("Stretch", {})
+      -- NoitaEvent.Call("RussianRoolet", { used_by = 'noita' })
+      -- NoitaEvent.Call("SuperRussianRoolet", { used_by = 'noita' })
+      -- NoitaEvent.Call("Bomberman", {})
+      -- NoitaEvent.Call("Twitchy", {})
+      -- NoitaEvent.Call("Neutralized", {})
+      -- NoitaEvent.Call("HeavySpread", {})
+      -- NoitaEvent.Call("SuperKnockback", {})
+      -- NoitaEvent.Call("SpawnSteve", { used_by = 'noita' })
+      -- NoitaEvent.Call("SpawnSkoude", { used_by = 'noita' })
+      -- NoitaEvent.Call("TrailLava", {})
+      -- NoitaEvent.Call("TrailAcid", {})
+      -- NoitaEvent.Call("TrailPoison", {})
+      -- NoitaEvent.Call("Blindness", {})
+      -- NoitaEvent.Call("Berserk", {})
+    end
+  end)
+end
+
 function OnPlayerSpawned(player_entity_id)
   GlobalsSetValue(TWITCH_POINT.GLOBAL_KEYNAMES.CURRENT_STEP, TWITCH_POINT.STEPS.UNINITIALISED)
   if HOST_NAME then
     loaded_ws = dofile("mods/twitch-point-integration/files/scripts/ws/ws.lua")
   end
+  local controls_component = EntityGetFirstComponent(GetPlayerEntity(), "ControlsComponent")
+  if (controls_component ~= nil) then
+    ComponentSetValue2(controls_component, "enabled", false)
+  end
   empty_name_announcement()
+  noita_event_debug()
 end
 
 function OnWorldPreUpdate()
   Coil.update(1)
   noita_event_fire()
+
+  if tonumber(TWITCH_POINT.STEPS.CONNECTED) == tonumber(GlobalsGetValue(TWITCH_POINT.GLOBAL_KEYNAMES.CURRENT_STEP, TWITCH_POINT.STEPS.UNINITIALISED)) then
+    game_start()
+  end
 end
 
 function OnWorldPostUpdate()
@@ -71,5 +115,11 @@ function OnWorldPostUpdate()
     SendEvent.Join(channel_name)
   end
 end
+
+ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua", "mods/twitch-point-integration/files/scripts/append/gun_extra_modifiers.lua")
+
+local content = ModTextFileGetContent("data/translations/common.csv")
+local tpi_content = ModTextFileGetContent("mods/twitch-point-integration/files/translations/common.csv")
+ModTextFileSetContent("data/translations/common.csv", content .. tpi_content)
 
 print("twitch-point-integration loaded")

@@ -5,7 +5,8 @@ TWITCH_POINT = {
     -- valueを保存する際はstringなので、numberにしていない
     UNINITIALISED = "1",
     WAITING_FOR_CONNECTION = "2",
-    CONNECTED = "3"
+    CONNECTED = "3",
+    STARTED = "4",
   },
   GLOBAL_KEYNAMES = {
     CURRENT_STEP = "twitch-point-integration.current_step"

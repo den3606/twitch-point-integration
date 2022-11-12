@@ -1,0 +1,16 @@
+<Entity>
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+    <ShotEffectComponent
+        extra_modifier="super_knockback"
+		>
+	</ShotEffectComponent>
+
+	<LifetimeComponent
+		lifetime="600"
+		>
+	</LifetimeComponent>
+
+</Entity>

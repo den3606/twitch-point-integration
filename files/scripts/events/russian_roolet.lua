@@ -3,9 +3,10 @@ local function RussianRoolet(data, event)
   SetRandomSeed(x + GameGetFrameNum(), y + GameGetFrameNum())
   if (Random(1, 666) == 666) then
     EntityLoad('mods/twitch-point-integration/files/entities/bomb_holy_giga.xml', x, y)
-    KillPlayer("あなたはRussianRooletで " .. data.used_by .. " によって殺されました…")
+
+    KillPlayer(GameTextGet("$tpi_rusian_roolet_death_message_1", data.used_by))
   else
-    GamePrint(data.used_by .. " がRussianRooletあなたを殺そうとしましたが、まだ死ぬときではなかったようです")
+    GamePrint(GameTextGet("$tpi_rusian_roolet_death_message_2", data.used_by))
   end
   return true
 end

@@ -1,0 +1,41 @@
+<Entity>
+  <PixelSceneComponent pixel_scene="mods/twitch-point-integration/files/biome_impl/tpi_shop.png"
+    pixel_scene_visual="mods/twitch-point-integration/files/biome_impl/tpi_shop_background.png"
+    pixel_scene_background="mods/twitch-point-integration/files/biome_impl/tpi_shop_background.png"
+    offset_x="-120"
+    offset_y="-120"
+    skip_biome_checks="1">
+  </PixelSceneComponent>
+
+  <ParticleEmitterComponent emitted_material_name="spark_green"
+    gravity.y="0.0"
+    lifetime_min="2"
+    lifetime_max="5"
+    count_min="4"
+    count_max="4"
+    render_on_grid="1"
+    fade_based_on_lifetime="1"
+    area_circle_radius.min="0"
+    area_circle_radius.max="0"
+    cosmetic_force_create="0"
+    airflow_force="0.351"
+    airflow_time="1"
+    airflow_scale="0.5"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    emit_cosmetic_particles="1"
+    image_animation_file="data/particles/image_emitters/circle_256_dim2.png"
+    image_animation_speed="6"
+    image_animation_loop="0"
+    is_emitting="1">
+  </ParticleEmitterComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/sea_of_oil"
+		set_latest_event_position="1" >
+	</AudioComponent>
+
+  <LifetimeComponent lifetime="18">
+  </LifetimeComponent>
+</Entity>
