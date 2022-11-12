@@ -25,18 +25,6 @@ local events = {
     twitchCost = 1500,
     weight = 100,
   },
-  Hello = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/hello.lua"),
-    name = "Hello",
-    twitchCost = 10,
-    weight = 0,
-  },
-  HelloDeer = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/hello_deer.lua"),
-    name = "HelloDeer",
-    twitchCost = 50,
-    weight = 120,
-  },
   Healing = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/healing.lua"),
     name = "Healing",
@@ -49,17 +37,29 @@ local events = {
     twitchCost = 200,
     weight = 80,
   },
+  HelloDeer = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/hello_deer.lua"),
+    name = "HelloDeer",
+    twitchCost = 50,
+    weight = 120,
+  },
+  Hello = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/hello.lua"),
+    name = "Hello",
+    twitchCost = 10,
+    weight = 0,
+  },
+  -- MovementControll = {
+  --   action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_controll.lua"),
+  --   name = "MovementControll",
+  --   twitchCost = 200,
+  --   weight = 150,
+  -- },
   Neutralized = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/neutralized.lua"),
     name = "Neutralized",
     twitchCost = 400,
     weight = 50,
-  },
-  TPIShop = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/tpi_shop.lua"),
-    name = "TPIShop",
-    twitchCost = 400,
-    weight = 40,
   },
   PotionGift = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/potion_gift.lua"),
@@ -67,11 +67,11 @@ local events = {
     twitchCost = 400,
     weight = 50,
   },
-  RandomSpell = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/random_spell.lua"),
-    name = "RandomSpell",
-    twitchCost = 400,
-    weight = 100,
+  RandomAll = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/random_all.lua"),
+    name = "RandomAll",
+    twitchCost = 200,
+    weight = 0,
   },
   RandomSpellx10 = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/random_spell_x10.lua"),
@@ -79,17 +79,37 @@ local events = {
     twitchCost = 7500,
     weight = 10,
   },
+  RandomSpell = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/random_spell.lua"),
+    name = "RandomSpell",
+    twitchCost = 400,
+    weight = 100,
+  },
   RussianRoolet = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/russian_roolet.lua"),
     name = "RussianRoolet",
     twitchCost = 1,
     weight = 150,
   },
-  RandomAll = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/random_all.lua"),
-    name = "RandomAll",
-    twitchCost = 200,
-    weight = 0,
+  SpawnRandomEnemy = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_random_enemy.lua"),
+    name = "SpawnRandomEnemy",
+    twitchCost = 500,
+    weight = 60,
+  },
+  -- secret
+  SpawnSkoude = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_skoude.lua"),
+    name = "SpawnSkoude",
+    twitchCost = 1000,
+    weight = 30,
+  },
+  -- secret
+  SpawnSteve = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_steve.lua"),
+    name = "SpawnSteve",
+    twitchCost = 500,
+    weight = 60,
   },
   SpawnWater = {
     action =  dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_water.lua"),
@@ -103,25 +123,11 @@ local events = {
     twitchCost = 200,
     weight = 150,
   },
-  SpawnRandomEnemy = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_random_enemy.lua"),
-    name = "SpawnRandomEnemy",
-    twitchCost = 500,
+  SuperRecoil = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/super_recoil.lua"),
+    name = "SuperRecoil",
+    twitchCost = 300,
     weight = 60,
-  },
-  -- secret
-  SpawnSteve = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_steve.lua"),
-    name = "SpawnSteve",
-    twitchCost = 500,
-    weight = 60,
-  },
-  -- secret
-  SpawnSkoude = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_skoude.lua"),
-    name = "SpawnSkoude",
-    twitchCost = 1000,
-    weight = 30,
   },
   SuperRussianRoolet = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/super_russian_roolet.lua"),
@@ -129,17 +135,17 @@ local events = {
     twitchCost = 5000,
     weight = 10,
   },
-  SuperRecoil = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/super_recoil.lua"),
-    name = "SuperRecoil",
+  TPIShop = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/tpi_shop.lua"),
+    name = "TPIShop",
+    twitchCost = 400,
+    weight = 40,
+  },
+  TrailAcid = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/trail_acid.lua"),
+    name = "TrailAcid",
     twitchCost = 300,
     weight = 60,
-  },
-  Twitchy = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/twitchy.lua"),
-    name = "Twitchy",
-    twitchCost = 300,
-    weight = 70,
   },
   TrailLava = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/trail_lava.lua"),
@@ -153,24 +159,18 @@ local events = {
     twitchCost = 300,
     weight = 80,
   },
-  TrailAcid = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/trail_acid.lua"),
-    name = "TrailAcid",
-    twitchCost = 300,
-    weight = 60,
-  },
   TrailWater = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/trail_water.lua"),
     name = "TrailWater",
     twitchCost = 200,
     weight = 80,
   },
-  -- MovementControll = {
-  --   action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_controll.lua"),
-  --   name = "MovementControll",
-  --   twitchCost = 200,
-  --   weight = 150,
-  -- },
+  Twitchy = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/twitchy.lua"),
+    name = "Twitchy",
+    twitchCost = 300,
+    weight = 70,
+  },
 }
 
 local function Call(event_name, event_data)
