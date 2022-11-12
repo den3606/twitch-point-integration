@@ -4,6 +4,7 @@ local function RandomAll(data, events)
     list[event.name] = event.weight
   end)
   local target_name = Lume.weightedchoice(list)
+  -- TODO:pcall で call する
   events[target_name].action(data, events)
   return true
 end

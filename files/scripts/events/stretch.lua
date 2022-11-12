@@ -9,9 +9,15 @@ local function Stretch(data, event)
   local effect_id = EntityLoad("mods/twitch-point-integration/files/entities/effect_stretch.xml", x, y)
   EntityAddChild(player_entity_id, effect_id)
 
+  -- Note:
+  -- Coilでコルーチンの非同期処理を行っており、その中で継続的に処理が走るため、player_entity_idが消失した場合でも走り続けている可能性がある
+  -- Entityファイルのlifetimeでwhile処理をかけられるように（Coilを排除できるように）修正した方が良い。
   Coil.add(function()
     local scale_size = 0.05
     local _, _, rotation, scale_x, scale_y = EntityGetTransform(player_entity_id)
+    if scale_x == nil or scale_y == nil or scale_size == nil then
+      return
+    end
     while (scale_y < 3.0) do
       local x, y = EntityGetTransform(player_entity_id)
       scale_y = scale_y + scale_size
