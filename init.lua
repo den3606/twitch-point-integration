@@ -84,6 +84,7 @@ local function noita_event_debug()
     -- Lume.push(NOITA_TASKS, {event_name = "SpawnRandomEnemy", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "SpawnSkoude", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
     -- Lume.push(NOITA_TASKS, {event_name = "SpawnSteve", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
+    -- Lume.push(NOITA_TASKS, {event_name = "SpawnTreasureChest", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "SpawnWater", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "Stretch", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "SuperRecoil", event_data = { used_by = 'noita', message = 'testMessage' }})
@@ -96,8 +97,8 @@ local function noita_event_debug()
     -- Lume.push(NOITA_TASKS, {event_name = "Twitchy", event_data = { used_by = 'noita', message = 'testMessage' }})
   end
 
-  -- add_events()   -- once
-  -- Coil.add(function() while true do Coil.wait(60) add_events() end end)   -- Loop
+  -- Coil.add(function() Coil.wait(180) add_events() end)   -- once
+  Coil.add(function() while true do Coil.wait(180) add_events() end end)   -- Loop
 end
 
 function OnPlayerSpawned(player_entity_id)

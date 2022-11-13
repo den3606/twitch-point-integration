@@ -123,6 +123,12 @@ local events = {
     twitchCost = 500,
     weight = 60,
   },
+  SpawnTreasureChest = {
+    action =  dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_treasure_chest.lua"),
+    name = "SpawnTreasureChest",
+    twitchCost = 150,
+    weight = 80,
+  },
   SpawnWater = {
     action =  dofile_once("mods/twitch-point-integration/files/scripts/events/spawn_water.lua"),
     name = "SpawnWater",
