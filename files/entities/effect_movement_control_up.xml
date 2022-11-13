@@ -3,7 +3,7 @@
   <InheritTransformComponent>
   </InheritTransformComponent>
 
-  <LifetimeComponent lifetime="300">
+  <LifetimeComponent lifetime="180">
   </LifetimeComponent>
 
   <LuaComponent script_source_file="mods/twitch-point-integration/files/scripts/status_effects/movement_control_up.lua"

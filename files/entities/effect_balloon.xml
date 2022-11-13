@@ -3,7 +3,7 @@
   <InheritTransformComponent>
   </InheritTransformComponent>
 
-  <LifetimeComponent lifetime="480">
+  <LifetimeComponent lifetime="360">
   </LifetimeComponent>
 
   <UIIconComponent
