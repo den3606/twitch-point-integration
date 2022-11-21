@@ -6,9 +6,7 @@ local function SpawnSteve(data)
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  SetRandomSeed(x + GameGetFrameNum(), y + GameGetFrameNum())
-  x = x + (Random(1, 2) == 1 and Random(-40, -30) or Random(30, 40))
-  y = y - Random(-30, 30)
+  x, y = EventHelper.EnemySpawnPoint(x, y)
 
   GamePrintImportant(GameTextGet("$tpi_secret_steve_spawn", data.used_by))
 	local steve_entity_id = EntityLoad("data/entities/animals/necromancer_shop.xml", x, y)

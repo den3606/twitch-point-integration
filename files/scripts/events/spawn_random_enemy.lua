@@ -1,14 +1,12 @@
 local function SpawnRandomEnemy(data)
+  local EventHelper = dofile_once("mods/twitch-point-integration/files/scripts/event_helper.lua")
   local player_entity_id = GetPlayerEntity()
   if player_entity_id == nil then
     return false
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  x = x + (Random(1, 2) == 1 and Random(-60, -30) or Random(30, 60))
-  y = y - Random(-30, 30)
-
-
+  x, y = EventHelper.EnemySpawnPoint(x, y)
 
   local animals = dofile_once("mods/twitch-point-integration/files/scripts/animal_list_from_conjurer.lua")
 
