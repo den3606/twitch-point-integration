@@ -5,6 +5,11 @@ mod_settings_version = 1
 mod_settings =
 {
   {
+		id = "_",
+		ui_name = "version: 0.0.1\n ",
+		not_setting = true,
+	},
+  {
 		id = "channelName",
 		ui_name = "channelName",
 		ui_description = "Your channel name.",
