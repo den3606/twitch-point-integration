@@ -97,6 +97,12 @@ local events = {
     twitchCost = 400,
     weight = 100,
   },
+  RescueHiisi = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/rescue_hiisi.lua"),
+    name = "RescueHiisi",
+    twitchCost = 1,
+    weight = 50,
+  },
   RussianRoolet = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/russian_roolet.lua"),
     name = "RussianRoolet",
@@ -154,7 +160,7 @@ local events = {
     weight = 10,
   },
   StallShop = {
-    action = dofile_once("mods/twitch-point-integration/files/scripts/events/tpi_shop.lua"),
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/stall_shop.lua"),
     name = "StallShop",
     twitchCost = 400,
     weight = 40,

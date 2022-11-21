@@ -80,6 +80,7 @@ local function noita_event_debug()
     -- Lume.push(NOITA_TASKS, {event_name = "RandomAll", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "RandomSpellx10", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "RandomSpell", event_data = { used_by = 'noita', message = 'testMessage' }})
+    -- Lume.push(NOITA_TASKS, {event_name = "RescueHiisi", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "RussianRoolet", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "SpawnRandomEnemy", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "SpawnSkoude", event_data = { used_by = 'noita', message = 'testMessage' }}) --secret
