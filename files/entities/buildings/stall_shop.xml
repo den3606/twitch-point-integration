@@ -1,7 +1,7 @@
 <Entity>
-  <PixelSceneComponent pixel_scene="mods/twitch-point-integration/files/biome_impl/tpi_shop.png"
-    pixel_scene_visual="mods/twitch-point-integration/files/biome_impl/tpi_shop_background.png"
-    pixel_scene_background="mods/twitch-point-integration/files/biome_impl/tpi_shop_background.png"
+  <PixelSceneComponent pixel_scene="mods/twitch-point-integration/files/biome_impl/stall_shop.png"
+    pixel_scene_visual="mods/twitch-point-integration/files/biome_impl/stall_shop_background.png"
+    pixel_scene_background="mods/twitch-point-integration/files/biome_impl/stall_shop_background.png"
     offset_x="-120"
     offset_y="-120"
     skip_biome_checks="1">

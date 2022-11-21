@@ -8,7 +8,7 @@ local function loadShopOwner(x, y)
     scale_x = "0.7",
     scale_y = "0.7",
   }
-  local name_entity = EntityCreateNew("tpi_shop_owner_name")
+  local name_entity = EntityCreateNew("stall_shop_owner_name")
   EntityAddComponent(name_entity, "InheritTransformComponent", {
     _tags = "enabled_in_world",
     use_root_parent = "1",
@@ -51,7 +51,7 @@ local function StallShop(data, event)
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  EntityLoad("mods/twitch-point-integration/files/entities/buildings/tpi_shop.xml", x + 90, y + 6)
+  EntityLoad("mods/twitch-point-integration/files/entities/buildings/stall_shop.xml", x + 90, y + 6)
 
   loadShopOwner(x, y)
 
