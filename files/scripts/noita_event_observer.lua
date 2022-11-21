@@ -34,7 +34,7 @@ local events = {
   FungalShift = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/fungal_shift.lua"),
     name = "FungalShift",
-    twitchCost = 1500,
+    twitchCost = 800,
     weight = 100,
   },
   Healing = {
@@ -153,9 +153,9 @@ local events = {
     twitchCost = 5000,
     weight = 10,
   },
-  TPIShop = {
+  StallShop = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/tpi_shop.lua"),
-    name = "TPIShop",
+    name = "StallShop",
     twitchCost = 400,
     weight = 40,
   },

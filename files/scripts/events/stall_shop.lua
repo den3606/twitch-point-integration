@@ -39,7 +39,7 @@ local function loadShopOwner(x, y)
   EntityAddTag(shop_owner_entity_id, "dont_append_name")
 end
 
-local function TPIShop(data, event)
+local function StallShop(data, event)
   dofile("data/scripts/biomes/temple_shared.lua")
   dofile("data/scripts/items/generate_shop_item.lua")
   dofile_once("data/scripts/director_helpers.lua")
@@ -71,4 +71,4 @@ local function TPIShop(data, event)
   return true
 end
 
-return TPIShop
+return StallShop
