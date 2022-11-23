@@ -1,0 +1,32 @@
+name: create release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: zipped mods
+        run: |
+          cd ../
+          ls
+          echo ${{ github.event.repository.name }}
+          zip -r ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}
+          mkdir ${{ github.event.repository.name }}/build
+          mv ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/build
+          cd ${{ github.event.repository.name }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: build/${{ github.event.repository.name }}.zip
+          body: 'You should download "Assets > twitch-point-integration.zip" and move this folder to noita/mods folder.'
+          generate_release_notes: true
