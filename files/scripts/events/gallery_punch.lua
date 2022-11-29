@@ -1,4 +1,4 @@
-local function GralleryPunch(data, event)
+local function GalleryPunch(data, event)
   local EventHelper = dofile_once("mods/twitch-point-integration/files/scripts/event_helper.lua")
 
   local player_entity_id = GetPlayerEntity()
@@ -13,4 +13,4 @@ local function GralleryPunch(data, event)
   return true
 end
 
-return GralleryPunch
+return GalleryPunch
