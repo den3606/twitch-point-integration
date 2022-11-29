@@ -37,6 +37,12 @@ local events = {
     twitchCost = 800,
     weight = 100,
   },
+  GralleryPunch = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/gallery_punch.lua"),
+    name = "GralleryPunch",
+    twitchCost = 20,
+    weight = 100,
+  },
   Healing = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/healing.lua"),
     name = "Healing",

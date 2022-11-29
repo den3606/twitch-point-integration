@@ -66,6 +66,7 @@ local function noita_event_debug()
     -- Lume.push(NOITA_TASKS, {event_name = "Blindness", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "Bomberman", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "FungalShift", event_data = { used_by = 'noita', message = 'testMessage' }})
+    Lume.push(NOITA_TASKS, {event_name = "GralleryPunch", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "Healing", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "HeavySpread", event_data = { used_by = 'noita', message = 'testMessage' }})
     -- Lume.push(NOITA_TASKS, {event_name = "HelloDeer", event_data = { used_by = 'noita', message = 'testMessage' }})
@@ -101,7 +102,7 @@ local function noita_event_debug()
   end
 
   -- Coil.add(function() Coil.wait(180) add_events() end)   -- once
-  -- Coil.add(function() while true do Coil.wait(180) add_events() end end)   -- Loop
+  Coil.add(function() while true do Coil.wait(180) add_events() end end)   -- Loop
 end
 
 function OnPlayerSpawned(player_entity_id)
