@@ -6,7 +6,7 @@ local function SpawnSkoude(data)
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  x, y = EventHelper.EnemySpawnPoint(x, y)
+  x, y = EventHelper.RandomSpawnPoint(x, y)
 
   GamePrintImportant(GameTextGet("$tpi_secret_skoude_spawn", data.used_by))
 	local skoude_entity_id = EntityLoad("data/entities/animals/necromancer_super.xml", x, y)

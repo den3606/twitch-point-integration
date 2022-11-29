@@ -6,7 +6,7 @@ local function SpawnRandomEnemy(data)
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  x, y = EventHelper.EnemySpawnPoint(x, y)
+  x, y = EventHelper.RandomSpawnPoint(x, y)
 
   local animals = dofile_once("mods/twitch-point-integration/files/scripts/animal_list_from_conjurer.lua")
 
