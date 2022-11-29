@@ -102,7 +102,7 @@ local function noita_event_debug()
   end
 
   -- Coil.add(function() Coil.wait(180) add_events() end)   -- once
-  Coil.add(function() while true do Coil.wait(180) add_events() end end)   -- Loop
+  -- Coil.add(function() while true do Coil.wait(180) add_events() end end)   -- Loop
 end
 
 function OnPlayerSpawned(player_entity_id)
