@@ -12,7 +12,7 @@ local function SpawnRandomEnemy(data)
 
   -- パラレルボスを召喚対象から外す
   for index, animal in ipairs(animals) do
-    if animal.name == 'parallel_alchemist' or animal.name == 'parallel_tentacles' then
+    if animal.name == 'Parallel alchemist' or animal.name == 'Parallel tentacles' then
       table.remove(animals, index)
     end
   end

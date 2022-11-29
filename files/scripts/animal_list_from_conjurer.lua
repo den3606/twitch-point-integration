@@ -6,7 +6,7 @@ local function animal(file, name, image)
       name=name,
     }
   end
-  
+
 return {--taken from conjurer
     animal("basebot_hidden", "Basebot hidden"),
     animal("basebot_neutralizer", "Basebot neutralizer"),
