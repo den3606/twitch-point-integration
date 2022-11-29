@@ -4,8 +4,8 @@ local function SpawnWater(data)
     return false
   end
   local x, y = EntityGetTransform(player_entity_id)
-  EntityLoad("mods/twitch-point-integration/files/entities/call_water_left.xml", x, y - 10)
-  EntityLoad("mods/twitch-point-integration/files/entities/call_water_right.xml", x, y - 10)
+  EntityLoad("mods/twitch-point-integration/files/entities/projectiles/call_water_left.xml", x, y - 10)
+  EntityLoad("mods/twitch-point-integration/files/entities/projectiles/call_water_right.xml", x, y - 10)
   return true
 end
 

@@ -8,7 +8,7 @@ local function SuperKusozakoBomb(data, event)
 
   local x, y = EntityGetTransform(GetPlayerEntity())
   x, y = EventHelper.RandomSpawnPoint(x, y)
-  EntityLoad("mods/twitch-point-integration/files/entities/super_kusozako_bomb.xml", x, y)
+  EntityLoad("mods/twitch-point-integration/files/entities/projectiles/super_kusozako_bomb.xml", x, y)
 
   return true
 end
