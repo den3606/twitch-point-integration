@@ -61,6 +61,12 @@ local events = {
     twitchCost = 10,
     weight = 0,
   },
+  KusozakoBomb = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/kusozako_bomb.lua"),
+    name = "KusozakoBomb",
+    twitchCost = 50,
+    weight = 110,
+  },
   MovementControl = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/movement_control.lua"),
     name = "MovementControl",
@@ -146,6 +152,12 @@ local events = {
     name = "Stretch",
     twitchCost = 200,
     weight = 150,
+  },
+  SuperKusozakoBomb = {
+    action = dofile_once("mods/twitch-point-integration/files/scripts/events/super_kusozako_bomb.lua"),
+    name = "SuperKusozakoBomb",
+    twitchCost = 100,
+    weight = 50,
   },
   SuperRecoil = {
     action = dofile_once("mods/twitch-point-integration/files/scripts/events/super_recoil.lua"),

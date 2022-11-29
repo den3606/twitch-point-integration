@@ -90,7 +90,7 @@ local function CreateDisplayNameEntity(name)
   return name_entity_id
 end
 
-local function EnemySpawnPoint(target_x, target_y)
+local function RandomSpawnPoint(target_x, target_y)
   SetRandomSeed(target_x + GameGetFrameNum(), target_y + GameGetFrameNum())
   local x = target_x + (Random(1, 2) == 1 and Random(-90, -60) or Random(60, 90))
   local y = target_y - Random(-30, 30)
@@ -98,7 +98,7 @@ local function EnemySpawnPoint(target_x, target_y)
 end
 
 return {
-  EnemySpawnPoint = EnemySpawnPoint,
+  RandomSpawnPoint = RandomSpawnPoint,
   SetLifetime = SetLifetime,
   AddIconInHud = AddIconInHud,
   CreateDisplayNameEntity = CreateDisplayNameEntity,
