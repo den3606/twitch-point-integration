@@ -5,7 +5,7 @@ local function Joined(data)
 end
 
 local function EventInvoked(data)
-  GamePrint("Event invoked from " .. data.event_data.user_login)
+  GamePrint("Event[" .. data.event_name .. "] invoked from " .. data.event_data.user_login)
   Lume.push(NOITA_TASKS, {
     event_name = data.event_name,
     event_data = {
