@@ -2,10 +2,31 @@
 function GetPlayerEntity()
   local players = EntityGetWithTag("player_unit")
   if #players == 0 then
-    return
+    return FindPolymorphedPlayer()
   end
 
   return players[1]
+end
+
+function FindPolymorphedPlayer()
+  local nearby_polymorph = EntityGetWithTag("polymorphed") or {}
+  local polymorphed_players = {}
+  for _, entity in pairs(nearby_polymorph) do
+    local game_stats = EntityGetFirstComponent(entity, "GameStatsComponent")
+    if game_stats ~= nil then
+      if ComponentGetValue2(game_stats, "is_player") == true then
+        table.insert(polymorphed_players, entity)
+      end
+    end
+  end
+
+  for _, player_id in ipairs(polymorphed_players) do
+    if EntityGetFirstComponent(player_id, "AnimalAIComponent") == nil and EntityGetFirstComponent(player_id, "PhysicsAIComponent") == nil and EntityGetFirstComponent(player_id, "WormAIComponent") ==
+      nil and EntityGetFirstComponent(player_id, "AdvancedFishAIComponent") == nil then
+      return player_id
+    end
+  end
+  return nil
 end
 
 -- 呼ぶとプレイヤーが死ぬ
