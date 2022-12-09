@@ -5,9 +5,6 @@ local function SpawnRandomEnemy(data)
     return false
   end
 
-  local x, y = EntityGetTransform(player_entity_id)
-  x, y = EventHelper.RandomSpawnPoint(x, y)
-
   local animals = dofile_once("mods/twitch-point-integration/files/scripts/animal_list_from_conjurer.lua")
 
   -- パラレルボスを召喚対象から外す
@@ -17,9 +14,14 @@ local function SpawnRandomEnemy(data)
     end
   end
 
-  SetRandomSeed(x + GameGetFrameNum(), y + GameGetFrameNum())
+  SetRandomSeed(GameGetFrameNum(), GameGetFrameNum())
   local target_idnex = Random(1, #animals)
-  EntityLoad(animals[target_idnex].path, x, y)
+
+  local x, y = EntityGetTransform(player_entity_id)
+  EventHelper.RandomPositionSpawn(x, y, 60, 0, 30, 30, function(target_x, target_y)
+    EntityLoad(animals[target_idnex].path, target_x, target_y)
+  end)
+
 
   return true
 end

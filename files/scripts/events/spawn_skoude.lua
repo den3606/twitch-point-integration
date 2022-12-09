@@ -5,15 +5,16 @@ local function SpawnSkoude(data)
     return false
   end
 
-  local x, y = EntityGetTransform(player_entity_id)
-  x, y = EventHelper.RandomSpawnPoint(x, y)
-
   GamePrintImportant(GameTextGet("$tpi_secret_skoude_spawn", data.used_by))
-	local skoude_entity_id = EntityLoad("data/entities/animals/necromancer_super.xml", x, y)
 
-  EntityRemoveTag(skoude_entity_id, "necromancer_shop")
-  EntityAddChild(skoude_entity_id, EventHelper.CreateDisplayNameEntity(data.used_by))
-  EntityAddTag(skoude_entity_id, "dont_append_name")
+  local x, y = EntityGetTransform(player_entity_id)
+  EventHelper.RandomPositionSpawn(x, y, 60, 0, 30, 30, function(target_x, target_y)
+    local skoude_entity_id = EntityLoad("data/entities/animals/necromancer_super.xml", target_x, target_y)
+
+    EntityRemoveTag(skoude_entity_id, "necromancer_shop")
+    EntityAddChild(skoude_entity_id, EventHelper.CreateDisplayNameEntity(data.used_by))
+    EntityAddTag(skoude_entity_id, "dont_append_name")
+  end)
 
   return true
 end

@@ -5,14 +5,16 @@ local function SpawnSteve(data)
     return false
   end
 
-  local x, y = EntityGetTransform(player_entity_id)
-  x, y = EventHelper.RandomSpawnPoint(x, y)
-
   GamePrintImportant(GameTextGet("$tpi_secret_steve_spawn", data.used_by))
-	local steve_entity_id = EntityLoad("data/entities/animals/necromancer_shop.xml", x, y)
-  EntityRemoveTag(steve_entity_id, "necromancer_shop")
-  EntityAddChild(steve_entity_id, EventHelper.CreateDisplayNameEntity(data.used_by))
-  EntityAddTag(steve_entity_id, "dont_append_name")
+
+  local x, y = EntityGetTransform(player_entity_id)
+  EventHelper.RandomPositionSpawn(x, y, 60, 0, 30, 30, function(target_x, target_y)
+    local steve_entity_id = EntityLoad("data/entities/animals/necromancer_shop.xml", target_x, target_y)
+    EntityRemoveTag(steve_entity_id, "necromancer_shop")
+    EntityAddChild(steve_entity_id, EventHelper.CreateDisplayNameEntity(data.used_by))
+    EntityAddTag(steve_entity_id, "dont_append_name")
+  end)
+
 
   return true
 end

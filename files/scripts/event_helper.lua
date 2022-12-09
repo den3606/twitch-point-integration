@@ -90,15 +90,51 @@ local function CreateDisplayNameEntity(name)
   return name_entity_id
 end
 
-local function RandomSpawnPoint(target_x, target_y)
-  SetRandomSeed(target_x + GameGetFrameNum(), target_y + GameGetFrameNum())
-  local x = target_x + (Random(1, 2) == 1 and Random(-90, -60) or Random(60, 90))
-  local y = target_y - Random(-30, 30)
-  return x, y
+---@param pivot_x number
+---@param pivot_y number
+---@param dist_x number
+---@param dist_y number
+---@param range_x number
+---@param range_y number
+---@param spawn_action function
+local function RandomPositionSpawn(pivot_x, pivot_y, dist_x, dist_y, range_x, range_y, spawn_action)
+  if (not pivot_x) or (not pivot_y) then
+    print('please set pivot x and y')
+    return
+  end
+
+  dist_x = dist_x or 0
+  dist_y = dist_y or 0
+  range_x = range_x or 0
+  range_y = range_y or 0
+
+  Coil.add(function()
+    local can_spawn = false
+    while (not can_spawn) do
+      SetRandomSeed(pivot_x + GameGetFrameNum(), pivot_y + GameGetFrameNum())
+      local target_x = pivot_x + (Random(1, 2) == 1 and Random(-(dist_x + range_x), -dist_x) or Random(dist_x, dist_x + range_x))
+      local target_y = pivot_y - (Random(1, 2) == 1 and Random(-(dist_y + range_y), -dist_y) or Random(dist_y, dist_y + range_y))
+
+      local is_hit_up = Raytrace(target_x, target_y, target_x, target_y - 5)
+      local is_hit_down = Raytrace(target_x, target_y, target_x, target_y + 1)
+      local is_hit_left = Raytrace(target_x, target_y, target_x - 2, target_y)
+      local is_hit_right = Raytrace(target_x, target_y, target_x + 2, target_y)
+
+      can_spawn = not (is_hit_up or is_hit_down or is_hit_left or is_hit_right)
+      if can_spawn then
+        if type(spawn_action) == 'function' then
+          spawn_action(target_x, target_y)
+        end
+      end
+      Coil.wait(1)
+    end
+  end)
+
+  return true
 end
 
 return {
-  RandomSpawnPoint = RandomSpawnPoint,
+  RandomPositionSpawn = RandomPositionSpawn,
   SetLifetime = SetLifetime,
   AddIconInHud = AddIconInHud,
   CreateDisplayNameEntity = CreateDisplayNameEntity,

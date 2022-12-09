@@ -7,20 +7,20 @@ local function HelloDeer(data, events)
   end
 
   local x, y = EntityGetTransform(player_entity_id)
-  SetRandomSeed(x + GameGetFrameNum(), y + GameGetFrameNum())
-  x = x + (Random(1, 2) == 1 and Random(-40, -10) or Random(10, 40))
-  y = y - Random(10, 30)
+  EventHelper.RandomPositionSpawn(x, y, 20, 0, 30, 30, function(target_x, target_y)
+    SetRandomSeed(x + GameGetFrameNum(), y + GameGetFrameNum())
+    local deer_entity = nil
+    if Random(1, 100) <= 15 then
+      deer_entity = EntityLoad("data/entities/projectiles/deck/exploding_deer.xml", target_x, target_y)
+    else
+      deer_entity = EntityLoad("data/entities/animals/deer.xml", target_x, target_y)
+    end
 
-  local deer_entity = nil
-  if Random(1, 100) <= 10 then
-    deer_entity = EntityLoad("data/entities/projectiles/deck/exploding_deer.xml", x, y)
-  else
-    deer_entity = EntityLoad("data/entities/animals/deer.xml", x, y)
-  end
+    EntityAddChild(deer_entity, EventHelper.CreateDisplayNameEntity(data.used_by))
+    EntityAddTag(deer_entity, "dont_append_name")
+  end)
 
-  EntityAddChild(deer_entity, EventHelper.CreateDisplayNameEntity(data.used_by))
-  EntityAddTag(deer_entity, "dont_append_name")
-
+  return true
 end
 
 return HelloDeer
